@@ -25,6 +25,10 @@ class Nouislider extends React.Component {
     if (this.props.onChange) {
       slider.on('change', this.props.onChange);
     }
+
+    if (this.props.onSlide) {
+      slider.on('slide', this.props.onSlide);
+    }
   }
 
   render() {
@@ -52,6 +56,8 @@ Nouislider.propTypes = {
   onChange: React.PropTypes.func,
   // http://refreshless.com/nouislider/events-callbacks/#section-update
   onUpdate: React.PropTypes.func,
+  // http://refreshless.com/nouislider/events-callbacks/#section-slide
+  onSlide: React.PropTypes.func,
   // http://refreshless.com/nouislider/slider-options/#section-orientation
   orientation: React.PropTypes.oneOf(['horizontal', 'vertical']),
   // http://refreshless.com/nouislider/pips/
